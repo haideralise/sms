@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Payment;
 use App\PaymentStatus;
 use App\Product;
 use App\User;
@@ -42,5 +43,14 @@ class Purchase extends Model
     {
         return $this->belongsTo(PaymentStatus::class, 'payment_status_id');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function payments()
+    {
+        return $this->morphMany(Payment::class, 'payable');
+    }
+
 
 }

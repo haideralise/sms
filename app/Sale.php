@@ -47,5 +47,13 @@ class Sale extends Model
     {
         return $this->belongsTo(PaymentStatus::class, 'payment_status_id');
     }
-    
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function payments()
+    {
+        return $this->morphMany(Payment::class, 'payable');
+    }
+
 }
