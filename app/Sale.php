@@ -1,38 +1,43 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
-use App\PaymentStatus;
-use App\Product;
-use App\User;
+use App\Models\Purchase;
 use Illuminate\Database\Eloquent\Model;
 
-class Purchase extends Model
+class Sale extends Model
 {
     protected $fillable = [
         'product_id',
+        'purchase_id',
         'units',
-        'in_stock',
-        'purchase_price',
-        'sale_price',
-        'purchased_by',
+        'discount',
+        'sold_by',
         'payment_status_id',
-        'purchased_at'
     ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function product(){
+    public function product()
+    {
         return $this->belongsTo(Product::class, 'product_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function purchaser()
+    public function purchase()
     {
-        return $this->belongsTo(User::class, 'purchased_by');
+        return $this->belongsTo(Purchase::class, 'purchase_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function seller()
+    {
+        return $this->belongsTo(User::class, 'sold_by');
     }
 
     /**
@@ -42,5 +47,5 @@ class Purchase extends Model
     {
         return $this->belongsTo(PaymentStatus::class, 'payment_status_id');
     }
-
+    
 }
