@@ -15,6 +15,19 @@ class CreatePurchasesTable extends Migration
     {
         Schema::create('purchases', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('product_id');
+
+            $table->float('purchase_price')->comment('per unit');
+            $table->float('sale_price')->comment('per unit');
+            $table->unsignedInteger('purchased_by');
+            $table->unsignedInteger('payment_status_id');
+
+            $table->timestamp('purchased_at');
+
+            $table->foreign('purchased_by')->references('id')->on('users');
+            $table->foreign('payment_status_id')->references('id')->on('payment_statuses');
+            $table->foreign('product_id')->references('id')->on('products');
+
             $table->timestamps();
         });
     }
