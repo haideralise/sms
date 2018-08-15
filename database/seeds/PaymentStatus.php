@@ -13,7 +13,7 @@ class PaymentStatus extends Seeder
     {
         return [
             ['type' => 'paid', 'description' => ''],
-            ['type' => 'non_paid', 'description' => ''],
+            ['type' => 'unpaid', 'description' => ''],
             ['type' => 'partially_paid','description' => ''],
             ['type' => 'paid_with_fee', 'description' => ''],
             ['type' => 'transfer_to_bill', 'description' => ''],
