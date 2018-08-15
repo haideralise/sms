@@ -17,12 +17,14 @@ class CreateUserFinesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('fined_to');
             $table->unsignedInteger('fined_by');
+            $table->unsignedInteger('fine_type_id');
             $table->text('reason');
             $table->date('fined_at');
             $table->timestamps();
 
             $table->foreign('fined_to')->references('id')->on('users');
             $table->foreign('fined_by')->references('id')->on('users');
+            $table->foreign('fine_type_id')->references('id')->on('fine_types');
 
         });
     }

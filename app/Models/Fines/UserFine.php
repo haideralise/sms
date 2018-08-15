@@ -22,9 +22,17 @@ class UserFine extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function Fined()
+    public function fined()
     {
         return $this->belongsTo(User::class, 'fined_to');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function fineType()
+    {
+        return $this->belongsTo(FineType::class, 'fine_type_id');
     }
 
 }
