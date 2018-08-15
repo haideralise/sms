@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Funds\GradeFund;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -55,4 +56,13 @@ class Grade extends Model
     {
         return $this->belongsTo(Campus::class, 'campus_id');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function funds()
+    {
+        return $this->hasMany(GradeFund::class, 'grade_id');
+    }
+
 }
