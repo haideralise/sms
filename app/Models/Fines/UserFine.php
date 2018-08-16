@@ -22,7 +22,7 @@ class UserFine extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function fined()
+    public function finedUser()
     {
         return $this->belongsTo(User::class, 'fined_to');
     }
