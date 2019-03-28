@@ -1,4 +1,4 @@
-# IQRA (School Management System)
+# School Management System
 
 The purpose of this project to provide web service to for school record management.
 
@@ -31,7 +31,7 @@ Perform following steps for local setup:
 
 1- Clone project by running the following command.
 
-	$ git clone git@bitbucket.org:adnansiddiq/iqra-backend.git
+	$ git clone git@github.com:haideralise/sms.git
 	
 2- Create a mysql database and use that database credentials in the next step 
 
@@ -66,9 +66,6 @@ Perform following steps for local setup:
 
 9- Api Docs POSTMAN.
 
-    Import from: https://www.getpostman.com/collections/5f5c37f264bd63a213d0
-    Direct View: https://documenter.getpostman.com/view/706841/collection/RVnVDzsS
-
 ## Other Information
 ### Setup Cron
       no cron job yet
@@ -86,9 +83,7 @@ Git Deployment Process
 
 ## Versioning/Branches
 
-See [branches detail](https://bitbucket.org/adnansiddiq/iqra-backend/branches/)
+See [branches detail]
 
 ## Authors
-
-- [Adnan Siddiq](https://bitbucket.org/adnansiddiq) *Working*
 
